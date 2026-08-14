@@ -1,4 +1,4 @@
-import socialScienceQuestions from "./SocialScienceQuestions";
+import socialScienceQuestions from "./socialScienceQuestions";
 import englishQuestions from "./englishQuestions";
 import cdpQuestions from "./cdpQuestions";
 import hindiQuestions from "./hindiQuestions";
