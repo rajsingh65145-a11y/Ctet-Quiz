@@ -1,0 +1,459 @@
+/* =========================
+   RESULT PAGE
+========================= */
+
+.result-page {
+  min-height: 100vh;
+  width: 100%;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 40px 20px;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(255, 255, 255, 0.95),
+      transparent 30%
+    ),
+    linear-gradient(
+      135deg,
+      #fff7fb 0%,
+      #ffeaf3 50%,
+      #ffdce9 100%
+    );
+}
+
+
+/* =========================
+   WATERMARK
+========================= */
+
+.result-watermark {
+  position: absolute;
+
+  top: clamp(15px, 3vw, 25px);
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 95%;
+
+  text-align: center;
+
+  white-space: nowrap;
+
+  font-size: clamp(35px, 8vw, 110px);
+
+  font-weight: 900;
+
+  letter-spacing: 2px;
+
+  color: rgba(255, 20, 120, 0.14);
+
+  pointer-events: none;
+
+  user-select: none;
+
+  z-index: 0;
+}
+
+
+/* =========================
+   RESULT CARD
+========================= */
+
+.result-card {
+  position: relative;
+
+  z-index: 2;
+
+  width: min(520px, 100%);
+
+  padding: 45px 35px;
+
+  text-align: center;
+
+  border-radius: 28px;
+
+  background: rgba(255, 255, 255, 0.84);
+
+  border: 1px solid rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+    0 25px 70px rgba(150, 55, 95, 0.15);
+
+  backdrop-filter: blur(15px);
+}
+
+
+/* =========================
+   ICON
+========================= */
+
+.result-icon {
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+
+/* =========================
+   LABEL
+========================= */
+
+.result-label {
+  color: #e83f86;
+
+  font-size: 12px;
+
+  font-weight: 800;
+
+  letter-spacing: 1.5px;
+}
+
+
+/* =========================
+   TITLE
+========================= */
+
+.result-card h1 {
+  margin-top: 10px;
+
+  color: #3a1c2c;
+
+  font-size: clamp(30px, 5vw, 42px);
+
+  line-height: 1.2;
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.result-message {
+  max-width: 400px;
+
+  margin: 12px auto 0;
+
+  color: #806574;
+
+  font-size: 15px;
+
+  line-height: 1.6;
+}
+
+
+/* =========================
+   SCORE CIRCLE
+========================= */
+
+.score-circle {
+  width: 145px;
+  height: 145px;
+
+  margin: 30px auto 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  flex-direction: column;
+
+  border-radius: 50%;
+
+  background: #fff0f6;
+
+  border: 7px solid rgba(236, 63, 134, 0.18);
+
+  box-shadow:
+    0 12px 30px rgba(236, 63, 134, 0.12);
+}
+
+
+.score-circle strong {
+  color: #e83f86;
+
+  font-size: 42px;
+
+  line-height: 1;
+}
+
+
+.score-circle span {
+  margin-top: 5px;
+
+  color: #927684;
+
+  font-size: 15px;
+}
+
+
+/* =========================
+   PERCENTAGE
+========================= */
+
+.percentage {
+  margin-top: 5px;
+
+  color: #e83f86;
+
+  font-size: 18px;
+
+  font-weight: 800;
+}
+
+
+/* =========================
+   PERFORMANCE MESSAGE
+========================= */
+
+.performance-message {
+  margin-top: 12px;
+
+  color: #3a1c2c;
+
+  font-size: 18px;
+
+  line-height: 1.4;
+}
+
+
+/* =========================
+   RESULT STATS
+========================= */
+
+.result-stats {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 12px;
+
+  margin-top: 28px;
+}
+
+
+.stat {
+  padding: 16px 10px;
+
+  border-radius: 15px;
+
+  background: #fff7fb;
+
+  border: 1px solid rgba(236, 63, 134, 0.08);
+}
+
+
+.stat strong {
+  display: block;
+
+  color: #e83f86;
+
+  font-size: 22px;
+}
+
+
+.stat span {
+  display: block;
+
+  margin-top: 5px;
+
+  color: #927684;
+
+  font-size: 12px;
+
+  font-weight: 600;
+}
+
+
+/* =========================
+   RETRY BUTTON
+========================= */
+
+.retry-btn {
+  width: 100%;
+
+  margin-top: 28px;
+
+  padding: 15px 25px;
+
+  border: none;
+
+  border-radius: 13px;
+
+  background: #ec3f86;
+
+  color: white;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba(236, 63, 134, 0.25);
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.retry-btn:hover {
+  background: #d92f75;
+
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 30px rgba(236, 63, 134, 0.30);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+  .result-page {
+    padding: 30px 16px;
+  }
+
+
+  .result-watermark {
+    top: clamp(15px, 3vw, 25px);
+
+    width: 100%;
+
+    font-size: 48px;
+  }
+
+
+  .result-card {
+    width: 100%;
+
+    padding: 35px 22px;
+
+    border-radius: 22px;
+  }
+
+
+  .result-icon {
+    font-size: 45px;
+
+    margin-bottom: 12px;
+  }
+
+
+  .result-label {
+    font-size: 11px;
+  }
+
+
+  .result-card h1 {
+    font-size: 32px;
+  }
+
+
+  .result-message {
+    font-size: 14px;
+  }
+
+
+  .score-circle {
+    width: 125px;
+    height: 125px;
+
+    margin-top: 25px;
+  }
+
+
+  .score-circle strong {
+    font-size: 36px;
+  }
+
+
+  .score-circle span {
+    font-size: 14px;
+  }
+
+
+  .percentage {
+    font-size: 17px;
+  }
+
+
+  .performance-message {
+    font-size: 16px;
+  }
+
+
+  .result-stats {
+    gap: 8px;
+
+    margin-top: 24px;
+  }
+
+
+  .stat {
+    padding: 13px 5px;
+  }
+
+
+  .stat strong {
+    font-size: 19px;
+  }
+
+
+  .stat span {
+    font-size: 11px;
+  }
+
+
+  .retry-btn {
+    margin-top: 24px;
+
+    padding: 14px 20px;
+  }
+  .home-btn {
+  width: 100%;
+
+  margin-top: 12px;
+
+  padding: 14px 25px;
+
+  border: 1px solid rgba(236, 63, 134, 0.25);
+
+  border-radius: 13px;
+
+  background: rgba(255, 255, 255, 0.8);
+
+  color: #e83f86;
+
+  font-size: 15px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.25s ease;
+}
+
+.home-btn:hover {
+  background: #fff0f6;
+
+  transform: translateY(-2px);
+}
+}

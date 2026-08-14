@@ -1,51 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import questions from "../Data/Question";
-import Result from "./Result";
+import Result from "../Pages/Result";
 import "../Styles/Quiz.css";
 
-
-
-const QUESTIONS_PER_SUBJECT = {
+const MOCK_QUESTIONS = {
+  "Child Development": 10,
   "Social Science": 10,
-  "English": 5,
-  "Child Development": 5,
-  "Hindi": 5,
-  "General Knowledge": 5,
+  "English": 10,
 };
 
-function getRandomFromSubject(subjectQuestions, count) {
-  const shuffled = [...subjectQuestions].sort(
-    () => Math.random() - 0.5
-  );
-
-  return shuffled.slice(0, count);
-}
+const MOCK_DURATION = 30 * 60;
 
 function getRandomQuestions() {
   const selectedQuestions = [];
 
-  Object.entries(QUESTIONS_PER_SUBJECT).forEach(
-    ([subject, count]) => {
-      const subjectQuestions = questions.filter(
-        (question) => question.subject === subject
-      );
+  Object.entries(MOCK_QUESTIONS).forEach(([subject, count]) => {
+    const subjectQuestions = questions.filter(
+      (question) => question.subject === subject
+    );
 
-      const selected = getRandomFromSubject(
-        subjectQuestions,
-        count
-      );
+    const shuffled = [...subjectQuestions].sort(
+      () => Math.random() - 0.5
+    );
 
-      selectedQuestions.push(...selected);
-    }
-  );
+    selectedQuestions.push(...shuffled.slice(0, count));
+  });
 
-  // Final 10 questions ka order bhi random
-  return selectedQuestions.sort(
-    () => Math.random() - 0.5
-  );
+  return selectedQuestions.sort(() => Math.random() - 0.5);
 }
 
-function Quiz() {
+function MockTest() {
   const [quizQuestions, setQuizQuestions] = useState(
     getRandomQuestions()
   );
@@ -58,19 +42,53 @@ function Quiz() {
 
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const [timeLeft, setTimeLeft] = useState(MOCK_DURATION);
+
   const question = quizQuestions[currentQuestion];
+
+  // Timer
+  
+// Timer
+
+useEffect(() => {
+  if (quizFinished) {
+    return;
+  }
+
+  const timer = setInterval(() => {
+    setTimeLeft((prev) => {
+      if (prev <= 1) {
+        clearInterval(timer);
+        setQuizFinished(true);
+        return 0;
+      }
+
+      return prev - 1;
+    });
+  }, 1000);
+
+  return () => clearInterval(timer);
+}, [quizFinished]);
+
+
+// Convert seconds into minutes and seconds
+
+const minutes = Math.floor(timeLeft / 60);
+const seconds = timeLeft % 60;
+  // Convert seconds into minutes and seconds
 
   // Answer select
   const handleAnswer = (index) => {
-    if (selectedAnswer !== null) return;
+  if (selectedAnswer !== null) return;
 
-    setSelectedAnswer(index);
+  setSelectedAnswer(index);
 
-    if (index === question.answer) {
-      setScore((prevScore) => prevScore + 1);
-    }
-  };
+  
 
+  if (index === question.answer) {
+    setScore((prev) => prev + 1);
+  }
+};
   // Next question
   const handleNext = () => {
     setSelectedAnswer(null);
@@ -85,17 +103,14 @@ function Quiz() {
   // Retry
   const handleRetry = () => {
     setQuizQuestions(getRandomQuestions());
-
     setCurrentQuestion(0);
-
     setSelectedAnswer(null);
-
     setScore(0);
-
+    setTimeLeft(MOCK_DURATION);
     setQuizFinished(false);
   };
 
-  // Result page
+  // Result
   if (quizFinished) {
     return (
       <Result
@@ -108,6 +123,7 @@ function Quiz() {
 
   return (
     <main className="quiz-page">
+
       <div className="quiz-container">
 
         {/* Header */}
@@ -116,14 +132,27 @@ function Quiz() {
 
           <div>
             <span className="quiz-label">
-              CTET PRACTICE
+              CTET MOCK TEST
             </span>
 
             <h1>{question.subject}</h1>
           </div>
 
-          <div className="question-count">
-            {currentQuestion + 1} / {quizQuestions.length}
+          <div className="mock-header-right">
+
+            <div className="question-count">
+              {currentQuestion + 1} / {quizQuestions.length}
+            </div>
+
+            <div
+              className={`mock-timer ${
+                timeLeft <= 60 ? "danger" : ""
+              }`}
+            >
+              ⏱️ {String(minutes).padStart(2, "0")}:
+              {String(seconds).padStart(2, "0")}
+            </div>
+
           </div>
 
         </div>
@@ -182,9 +211,7 @@ function Quiz() {
                 <button
                   key={index}
                   className={`option ${optionClass}`}
-                  onClick={() =>
-                    handleAnswer(index)
-                  }
+                  onClick={() => handleAnswer(index)}
                 >
 
                   <span className="option-letter">
@@ -195,7 +222,6 @@ function Quiz() {
 
                 </button>
               );
-
             })}
 
           </div>
@@ -230,7 +256,7 @@ function Quiz() {
 
             {currentQuestion ===
             quizQuestions.length - 1
-              ? "Finish Quiz"
+              ? "Finish Mock Test"
               : "Next Question →"}
 
           </button>
@@ -238,8 +264,9 @@ function Quiz() {
         </div>
 
       </div>
+
     </main>
   );
 }
 
-export default Quiz;
+export default MockTest;
