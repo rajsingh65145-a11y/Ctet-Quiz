@@ -99,7 +99,7 @@
 
   white-space: nowrap;
 
-  color: rgba(236, 63, 134, 0.09);
+  color: rgba(207, 24, 86, 0.18);
 
   z-index: 0;
 
@@ -1275,16 +1275,16 @@
   }
 
   .name-watermark {
-    top: 77px;
+    top: 75px;
 
-    font-size: 9vw;
+    font-size: 8vw;
 
     letter-spacing: 1px;
   }
 
   .hero-section {
     min-height: auto;
-
+     top:90px;
     gap: 35px;
   }
 

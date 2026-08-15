@@ -12,7 +12,7 @@ function Home() {
       <div className="bg-orb orb-two"></div>
 
       <div className="name-watermark">
-        FOR PRIYA SINGH
+        FOR DEAR MAMI
       </div>
 
       {/* ================================
