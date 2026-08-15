@@ -402,6 +402,10 @@ top: clamp(15px, 3vw, 25px);
 
   font-size: 13px;
 }
+.subject-card,
+.practice-option-card {
+  cursor: pointer;
+}
 
 
 /* ================================
@@ -526,20 +530,27 @@ top: clamp(15px, 3vw, 25px);
    QUIZ MODES
 ========================= */
 
-.quiz-modes {
+/* =========================
+   PRACTICE OPTIONS
+========================= */
+
+.practice-options {
+  position: relative;
+  z-index: 2;
+
+  max-width: 1200px;
+  margin: 30px auto 0;
+
   display: flex;
   gap: 16px;
-  margin-top: 30px;
-  width: 100%;
-  max-width: 650px;
 }
 
 
 /* =========================
-   MODE CARD
+   PRACTICE OPTION CARD
 ========================= */
 
-.mode-card {
+.practice-option-card {
   flex: 1;
 
   display: flex;
@@ -567,9 +578,11 @@ top: clamp(15px, 3vw, 25px);
 }
 
 
-/* Hover */
+/* =========================
+   HOVER
+========================= */
 
-.mode-card:hover {
+.practice-option-card:hover {
   transform: translateY(-5px);
 
   background: rgba(255, 255, 255, 0.98);
@@ -583,7 +596,7 @@ top: clamp(15px, 3vw, 25px);
    ICON
 ========================= */
 
-.mode-icon {
+.practice-option-icon {
   width: 48px;
   height: 48px;
 
@@ -605,11 +618,7 @@ top: clamp(15px, 3vw, 25px);
    TEXT
 ========================= */
 
-.mode-info {
-  flex: 1;
-}
-
-.mode-info h3 {
+.practice-option-card h3 {
   margin: 0;
 
   color: #3a1c2c;
@@ -618,7 +627,7 @@ top: clamp(15px, 3vw, 25px);
   font-weight: 800;
 }
 
-.mode-info p {
+.practice-option-card p {
   margin: 5px 0 0;
 
   color: #927684;
@@ -631,13 +640,17 @@ top: clamp(15px, 3vw, 25px);
    ARROW
 ========================= */
 
-.mode-arrow {
+.practice-arrow {
   width: 32px;
   height: 32px;
+
+  margin-left: auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
+
+  flex-shrink: 0;
 
   border-radius: 50%;
 
@@ -651,17 +664,8 @@ top: clamp(15px, 3vw, 25px);
   transition: transform 0.25s ease;
 }
 
-.mode-card:hover .mode-arrow {
+.practice-option-card:hover .practice-arrow {
   transform: translateX(4px);
-}
-
-
-/* =========================
-   MOCK TEST
-========================= */
-
-.mock-mode {
-  border-color: rgba(236, 63, 134, 0.25);
 }
 
 
@@ -671,12 +675,12 @@ top: clamp(15px, 3vw, 25px);
 
 @media (max-width: 700px) {
 
-  .quiz-modes {
+  .practice-options {
     flex-direction: column;
     max-width: 100%;
   }
 
-  .mode-card {
+  .practice-option-card {
     width: 100%;
   }
 

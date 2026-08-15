@@ -42,6 +42,8 @@ function MockTest() {
 
   const [quizFinished, setQuizFinished] = useState(false);
 
+  const [showSubmitConfirm, setShowSubmitConfirm] = useState(false);
+
   const [timeLeft, setTimeLeft] = useState(MOCK_DURATION);
 
   const question = quizQuestions[currentQuestion];
@@ -91,25 +93,23 @@ const seconds = timeLeft % 60;
 };
   // Next question
   const handleNext = () => {
+  if (currentQuestion < quizQuestions.length - 1) {
     setSelectedAnswer(null);
-
-    if (currentQuestion < quizQuestions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1);
-    } else {
-      setQuizFinished(true);
-    }
-  };
-
+    setCurrentQuestion((prev) => prev + 1);
+  } else {
+    setShowSubmitConfirm(true);
+  }
+};
   // Retry
   const handleRetry = () => {
-    setQuizQuestions(getRandomQuestions());
-    setCurrentQuestion(0);
-    setSelectedAnswer(null);
-    setScore(0);
-    setTimeLeft(MOCK_DURATION);
-    setQuizFinished(false);
-  };
-
+  setQuizQuestions(getRandomQuestions());
+  setCurrentQuestion(0);
+  setSelectedAnswer(null);
+  setScore(0);
+  setTimeLeft(MOCK_DURATION);
+  setQuizFinished(false);
+  setShowSubmitConfirm(false);
+};
   // Result
   if (quizFinished) {
     return (
@@ -260,6 +260,49 @@ const seconds = timeLeft % 60;
               : "Next Question →"}
 
           </button>
+          {showSubmitConfirm && (
+  <div className="submit-overlay">
+
+    <div className="submit-modal">
+
+      <div className="submit-icon">
+        ⚠️
+      </div>
+
+      <h2>
+        Finish Mock Test?
+      </h2>
+
+      <p>
+        Are you sure you want to submit your mock test?
+        You won't be able to change your answers after submission.
+      </p>
+
+      <div className="submit-actions">
+
+        <button
+          className="cancel-submit-btn"
+          onClick={() => setShowSubmitConfirm(false)}
+        >
+          Continue Test
+        </button>
+
+        <button
+          className="confirm-submit-btn"
+          onClick={() => {
+            setShowSubmitConfirm(false);
+            setQuizFinished(true);
+          }}
+        >
+          Submit Test
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+)}
 
         </div>
 
