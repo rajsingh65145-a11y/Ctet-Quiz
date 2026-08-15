@@ -7,17 +7,24 @@ function Home() {
   return (
     <div className="home-page">
 
+      {/* Background decoration */}
+      <div className="bg-orb orb-one"></div>
+      <div className="bg-orb orb-two"></div>
+
       <div className="name-watermark">
         FOR PRIYA SINGH
       </div>
 
-      {/* Hero Section */}
+      {/* ================================
+          HERO SECTION
+      ================================ */}
 
       <section className="hero-section">
 
         <div className="hero-content">
 
           <div className="ctet-badge">
+            <span className="badge-dot"></span>
             CTET PAPER 2 • SST
           </div>
 
@@ -32,22 +39,63 @@ function Home() {
             and prepare confidently for your examination.
           </p>
 
-          <button
-            className="start-quiz-btn"
-            onClick={() => navigate("/quiz")}
-          >
-            Start Quiz <span>→</span>
-          </button>
+          <div className="hero-actions">
+
+            <button
+              className="start-quiz-btn"
+              onClick={() => navigate("/quiz")}
+            >
+              Start Quiz
+              <span>→</span>
+            </button>
+
+            <div className="hero-note">
+              <span>✓</span>
+              Instant results
+            </div>
+
+          </div>
+
+          {/* Small stats */}
+
+          <div className="hero-mini-stats">
+
+            <div>
+              <strong>500+</strong>
+              <span>Questions</span>
+            </div>
+
+            <div>
+              <strong>5+</strong>
+              <span>Subjects</span>
+            </div>
+
+            <div>
+              <strong>∞</strong>
+              <span>Practice</span>
+            </div>
+
+          </div>
 
         </div>
 
 
-        {/* Practice Box */}
+        {/* ================================
+            PRACTICE PREVIEW CARD
+        ================================ */}
 
         <div className="practice-box">
 
-          <div className="book-icon">
-            📚
+          <div className="practice-card-top">
+
+            <div className="book-icon">
+              📚
+            </div>
+
+            <span className="live-badge">
+              ● READY
+            </span>
+
           </div>
 
           <h2>
@@ -55,8 +103,21 @@ function Home() {
           </h2>
 
           <p>
-            Random questions • Instant results
+            Build your confidence with focused MCQ practice.
           </p>
+
+          <div className="practice-progress">
+
+            <div className="progress-header">
+              <span>Practice Progress</span>
+              <strong>∞</strong>
+            </div>
+
+            <div className="progress-line">
+              <span></span>
+            </div>
+
+          </div>
 
           <div className="practice-stats">
 
@@ -82,12 +143,14 @@ function Home() {
       </section>
 
 
-      {/* Practice Options */}
+      {/* ================================
+          PRACTICE MODES
+      ================================ */}
 
       <section className="practice-options">
 
         <div
-          className="practice-option-card"
+          className="practice-option-card quiz-mode-card"
           onClick={() => navigate("/quiz")}
         >
 
@@ -95,14 +158,22 @@ function Home() {
             📝
           </div>
 
-          <div>
-            <h3>
-              Practice Quiz
-            </h3>
+          <div className="practice-option-content">
+
+            <div className="option-title-row">
+              <h3>
+                Practice Quiz
+              </h3>
+
+              <span className="mode-label">
+                PRACTICE
+              </span>
+            </div>
 
             <p>
-              30 random questions
+              50 random questions with instant feedback
             </p>
+
           </div>
 
           <span className="practice-arrow">
@@ -113,22 +184,30 @@ function Home() {
 
 
         <div
-          className="practice-option-card"
+          className="practice-option-card mock-mode-card"
           onClick={() => navigate("/mock-test")}
         >
 
-          <div className="practice-option-icon">
+          <div className="practice-option-icon mock-icon">
             🎯
           </div>
 
-          <div>
-            <h3>
-              Full Mock Test
-            </h3>
+          <div className="practice-option-content">
+
+            <div className="option-title-row">
+              <h3>
+                Full Mock Test
+              </h3>
+
+              <span className="mode-label">
+                EXAM MODE
+              </span>
+            </div>
 
             <p>
-              Exam-style practice
+              Exam-style test with timer and final score
             </p>
+
           </div>
 
           <span className="practice-arrow">
@@ -140,19 +219,27 @@ function Home() {
       </section>
 
 
-      {/* Subjects Section */}
+      {/* ================================
+          SUBJECT SECTION
+      ================================ */}
 
       <section className="subjects-section">
 
         <div className="subjects-heading">
 
-          <p>
-            CHOOSE YOUR SUBJECT
-          </p>
+          <div>
+            <p>
+              CHOOSE YOUR SUBJECT
+            </p>
 
-          <h2>
-            What do you want to practice?
-          </h2>
+            <h2>
+              What do you want to practice?
+            </h2>
+          </div>
+
+          <span className="subject-count">
+            5 Subjects
+          </span>
 
         </div>
 
@@ -162,7 +249,7 @@ function Home() {
           {/* Social Science */}
 
           <div
-            className="subject-card main-subject"
+            className="subject-card featured-subject"
             onClick={() =>
               navigate("/quiz?subject=Social%20Science")
             }
@@ -172,7 +259,8 @@ function Home() {
               🌍
             </div>
 
-            <div>
+            <div className="subject-info">
+
               <h3>
                 Social Science
               </h3>
@@ -180,7 +268,12 @@ function Home() {
               <p>
                 Main Subject • SST
               </p>
+
             </div>
+
+            <span className="subject-arrow">
+              →
+            </span>
 
           </div>
 
@@ -198,7 +291,8 @@ function Home() {
               🧠
             </div>
 
-            <div>
+            <div className="subject-info">
+
               <h3>
                 Child Development
               </h3>
@@ -206,7 +300,12 @@ function Home() {
               <p>
                 Pedagogy & Development
               </p>
+
             </div>
+
+            <span className="subject-arrow">
+              →
+            </span>
 
           </div>
 
@@ -224,7 +323,8 @@ function Home() {
               🔤
             </div>
 
-            <div>
+            <div className="subject-info">
+
               <h3>
                 English
               </h3>
@@ -232,7 +332,12 @@ function Home() {
               <p>
                 Language Practice
               </p>
+
             </div>
+
+            <span className="subject-arrow">
+              →
+            </span>
 
           </div>
 
@@ -250,7 +355,8 @@ function Home() {
               🇮🇳
             </div>
 
-            <div>
+            <div className="subject-info">
+
               <h3>
                 Hindi
               </h3>
@@ -258,7 +364,12 @@ function Home() {
               <p>
                 Language Practice
               </p>
+
             </div>
+
+            <span className="subject-arrow">
+              →
+            </span>
 
           </div>
 
@@ -276,7 +387,8 @@ function Home() {
               📖
             </div>
 
-            <div>
+            <div className="subject-info">
+
               <h3>
                 General Knowledge
               </h3>
@@ -284,11 +396,48 @@ function Home() {
               <p>
                 General Awareness
               </p>
+
             </div>
+
+            <span className="subject-arrow">
+              →
+            </span>
 
           </div>
 
         </div>
+
+      </section>
+
+
+      {/* ================================
+          BOTTOM CTA
+      ================================ */}
+
+      <section className="bottom-cta">
+
+        <div>
+
+          <span className="cta-label">
+            READY TO PRACTICE?
+          </span>
+
+          <h2>
+            Turn practice into confidence.
+          </h2>
+
+          <p>
+            Start a quiz and see how prepared you really are.
+          </p>
+
+        </div>
+
+        <button
+          onClick={() => navigate("/quiz")}
+        >
+          Start Practicing
+          <span>→</span>
+        </button>
 
       </section>
 
