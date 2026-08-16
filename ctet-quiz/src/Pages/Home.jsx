@@ -1,13 +1,49 @@
 import "../Styles/Home.css";
 import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
   const navigate = useNavigate();
 
+  /* =========================================
+     SCROLL REVEAL
+  ========================================= */
+
+  useEffect(() => {
+    const elements = document.querySelectorAll(".scroll-reveal");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("revealed");
+
+            // Animation sirf ek baar chale
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.15,
+      }
+    );
+
+    elements.forEach((element) => {
+      observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
   return (
     <div className="home-page">
 
-      {/* Background decoration */}
+      {/* =========================================
+          BACKGROUND DECORATION
+      ========================================= */}
+
       <div className="bg-orb orb-one"></div>
       <div className="bg-orb orb-two"></div>
 
@@ -15,9 +51,44 @@ function Home() {
         FOR DEAR MAMI
       </div>
 
-      {/* ================================
+
+      {/* =========================================
+          FALLING PINK FLOWERS
+      ========================================= */}
+
+      <div className="falling-flowers" aria-hidden="true">
+
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+        <span>🌸</span>
+
+      </div>
+
+
+      {/* =========================================
           HERO SECTION
-      ================================ */}
+      ========================================= */}
 
       <section className="hero-section">
 
@@ -56,6 +127,7 @@ function Home() {
 
           </div>
 
+
           {/* Small stats */}
 
           <div className="hero-mini-stats">
@@ -80,9 +152,9 @@ function Home() {
         </div>
 
 
-        {/* ================================
+        {/* =========================================
             PRACTICE PREVIEW CARD
-        ================================ */}
+        ========================================= */}
 
         <div className="practice-box">
 
@@ -143,11 +215,11 @@ function Home() {
       </section>
 
 
-      {/* ================================
+      {/* =========================================
           PRACTICE MODES
-      ================================ */}
+      ========================================= */}
 
-      <section className="practice-options">
+      <section className="practice-options scroll-reveal">
 
         <div
           className="practice-option-card quiz-mode-card"
@@ -161,6 +233,7 @@ function Home() {
           <div className="practice-option-content">
 
             <div className="option-title-row">
+
               <h3>
                 Practice Quiz
               </h3>
@@ -168,6 +241,7 @@ function Home() {
               <span className="mode-label">
                 PRACTICE
               </span>
+
             </div>
 
             <p>
@@ -195,6 +269,7 @@ function Home() {
           <div className="practice-option-content">
 
             <div className="option-title-row">
+
               <h3>
                 Full Mock Test
               </h3>
@@ -202,6 +277,7 @@ function Home() {
               <span className="mode-label">
                 EXAM MODE
               </span>
+
             </div>
 
             <p>
@@ -219,15 +295,16 @@ function Home() {
       </section>
 
 
-      {/* ================================
+      {/* =========================================
           SUBJECT SECTION
-      ================================ */}
+      ========================================= */}
 
-      <section className="subjects-section">
+      <section className="subjects-section scroll-reveal">
 
         <div className="subjects-heading">
 
           <div>
+
             <p>
               CHOOSE YOUR SUBJECT
             </p>
@@ -235,6 +312,7 @@ function Home() {
             <h2>
               What do you want to practice?
             </h2>
+
           </div>
 
           <span className="subject-count">
@@ -410,11 +488,11 @@ function Home() {
       </section>
 
 
-      {/* ================================
+      {/* =========================================
           BOTTOM CTA
-      ================================ */}
+      ========================================= */}
 
-      <section className="bottom-cta">
+      <section className="bottom-cta scroll-reveal">
 
         <div>
 
