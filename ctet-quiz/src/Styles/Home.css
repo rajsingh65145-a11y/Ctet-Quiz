@@ -99,11 +99,12 @@
 
   white-space: nowrap;
 
-  color: rgba(207, 24, 86, 0.18);
-
+color:#DB2777;
   z-index: 0;
 
   pointer-events: none;
+
+ 
 
   user-select: none;
 }
