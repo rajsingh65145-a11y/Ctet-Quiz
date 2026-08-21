@@ -27,9 +27,9 @@
     ),
     linear-gradient(
       135deg,
-      #fff9fc 0%,
-      #ffedf5 48%,
-      #ffe0ec 100%
+      #b82c72 0%,
+      #270917 48%,
+      #380418 100%
     );
 
   padding: 40px;
@@ -299,7 +299,7 @@
 
   margin-top: 24px;
 
-  color: #765967;
+  color: #011118;
 
   font-size: 17px;
 
