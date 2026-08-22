@@ -14,19 +14,18 @@
   justify-content: center;
 
   padding: 40px 20px;
-
-  background:
-    radial-gradient(
-      circle at 10% 10%,
-      rgba(255, 255, 255, 0.95),
-      transparent 30%
-    ),
-    linear-gradient(
-      135deg,
-      #fff7fb 0%,
-      #ffeaf3 50%,
-      #ffdce9 100%
-    );
+background:
+  radial-gradient(
+    circle at 10% 10%,
+    rgba(90, 55, 100, 0.12),
+    transparent 30%
+  ),
+  linear-gradient(
+    135deg,
+    #111014 0%,
+    #08070B 50%,
+    #020203 100%
+  );
 }
 
 
@@ -82,7 +81,7 @@
 
   border-radius: 28px;
 
-  background: rgba(255, 255, 255, 0.84);
+  background:#370215;
 
   border: 1px solid rgba(255, 255, 255, 0.95);
 
@@ -109,7 +108,7 @@
 ========================= */
 
 .result-label {
-  color: #e83f86;
+  color: #5b595a;
 
   font-size: 12px;
 
@@ -126,7 +125,7 @@
 .result-card h1 {
   margin-top: 10px;
 
-  color: #3a1c2c;
+  color: #6e6c6d;
 
   font-size: clamp(30px, 5vw, 42px);
 
@@ -143,7 +142,7 @@
 
   margin: 12px auto 0;
 
-  color: #806574;
+  color: #656263;
 
   font-size: 15px;
 
@@ -171,7 +170,7 @@
 
   border-radius: 50%;
 
-  background: #fff0f6;
+  background: #452732;
 
   border: 7px solid rgba(236, 63, 134, 0.18);
 
@@ -220,7 +219,7 @@
 .performance-message {
   margin-top: 12px;
 
-  color: #3a1c2c;
+  color: #666566;
 
   font-size: 18px;
 
@@ -248,7 +247,7 @@
 
   border-radius: 15px;
 
-  background: #fff7fb;
+  background: #5c5a5b;
 
   border: 1px solid rgba(236, 63, 134, 0.08);
 }
@@ -268,7 +267,7 @@
 
   margin-top: 5px;
 
-  color: #927684;
+  color: #e7e1e4;
 
   font-size: 12px;
 
@@ -293,7 +292,7 @@
 
   background: #ec3f86;
 
-  color: white;
+  color: rgb(239, 232, 232);
 
   font-size: 16px;
 
@@ -438,9 +437,9 @@
 
   border-radius: 13px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(149, 145, 145, 0.8);
 
-  color: #e83f86;
+  color: #430625;
 
   font-size: 15px;
 
@@ -452,7 +451,7 @@
 }
 
 .home-btn:hover {
-  background: #fff0f6;
+  background: #656464;
 
   transform: translateY(-2px);
 }

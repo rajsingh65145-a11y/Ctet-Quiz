@@ -5,11 +5,17 @@
   padding: 40px 20px;
 
   background:
-    linear-gradient(
-      135deg,
-      #fff7fb,
-      #ffe5f0
-    );
+  radial-gradient(
+    circle at 15% 15%,
+    rgba(90, 55, 100, 0.12),
+    transparent 30%
+  ),
+  linear-gradient(
+    135deg,
+    #111014 0%,
+    #08070B 50%,
+    #020203 100%
+  );
 }
 
 .quiz-container {
@@ -43,7 +49,7 @@
 .quiz-header h1 {
   margin-top: 5px;
 
-  color: #351827;
+  color: #b10f63;
 
   font-size: 28px;
 }
@@ -89,14 +95,18 @@
 /* Question Card */
 
 .question-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.06);
 
-  padding: 35px;
+padding: 35px;
 
-  border-radius: 22px;
+border-radius: 22px;
 
-  box-shadow:
-    0 15px 40px rgba(150, 55, 95, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.08);
+
+box-shadow:
+  0 15px 40px rgba(0, 0, 0, 0.35);
+
+backdrop-filter: blur(18px);
 }
 
 .question-number {
@@ -110,7 +120,7 @@
 }
 
 .question-card h2 {
-  color: #351827;
+  color: #7a7879;
 
   font-size: 23px;
 
@@ -144,9 +154,9 @@
 
   border: 2px solid #eeeeee;
 
-  background: white;
+  background: rgb(86, 85, 85);
 
-  color: #493542;
+  color: #f8f6f7;
 
   font-size: 15px;
 
@@ -160,7 +170,7 @@
 .option:hover {
   border-color: #f18ab2;
 
-  background: #fff7fa;
+  background: #6d032a;
 }
 
 .option-letter {
@@ -252,7 +262,7 @@
 
   border-radius: 12px;
 
-  background: #e83f86;
+  background: #63042b;
 
   color: white;
 
@@ -268,7 +278,7 @@
 }
 
 .next-btn:disabled {
-  background: #e5b6c8;
+  background: #8a0739;
 
   cursor: not-allowed;
 }

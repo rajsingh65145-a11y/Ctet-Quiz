@@ -15,22 +15,17 @@
   overflow: hidden;
 
   background:
-    radial-gradient(
-      circle at 8% 8%,
-      rgba(255, 255, 255, 0.95),
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 90% 35%,
-      rgba(255, 196, 220, 0.55),
-      transparent 28%
-    ),
-    linear-gradient(
-      135deg,
-      #b82c72 0%,
-      #270917 48%,
-      #380418 100%
-    );
+  radial-gradient(
+    circle at 15% 15%,
+    rgba(90, 55, 100, 0.12),
+    transparent 30%
+  ),
+  linear-gradient(
+    135deg,
+    #111014 0%,
+    #08070B 50%,
+    #020203 100%
+  );
 
   padding: 40px;
 
@@ -282,7 +277,7 @@
 
   letter-spacing: -2px;
 
-  color: #321925;
+  color: #efa3b7;
 }
 
 .hero-content h1 span {
@@ -299,7 +294,7 @@
 
   margin-top: 24px;
 
-  color: #011118;
+  color: #e4e6e7;
 
   font-size: 17px;
 
@@ -488,7 +483,7 @@
 }
 
 .hero-mini-stats strong {
-  color: #3a1c2c;
+  color: #f2edf0;
 
   font-size: 20px;
 
@@ -1111,7 +1106,7 @@
 .subjects-heading h2 {
   margin-top: 8px;
 
-  color: #3a1c2c;
+  color: #f8f4f6;
 
   font-size: 30px;
 
