@@ -150,7 +150,7 @@ Supported screen sizes:
 
 ## 🏗️ Project Structure
 
-
+```text
 CTET-Quiz/
 │
 ├── public/
@@ -176,4 +176,3 @@ CTET-Quiz/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
-
