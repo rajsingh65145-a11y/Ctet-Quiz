@@ -80,7 +80,7 @@ function Home() {
         <span>✨</span>
         <span>✨</span>
         <span>✨</span>
-        <span>✨</span>
+        <span>✨</span>  
         <span>✨</span>
         <span>✨</span>
         <span>✨</span>
