@@ -1,328 +1,297 @@
-/* =========================
-   RESULT PAGE
-========================= */
+/* =========================================
+   RESULT PAGE — LIGHT INDIGO THEME
+========================================= */
 
 .result-page {
   min-height: 100vh;
   width: 100%;
-
   position: relative;
   overflow: hidden;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 40px 20px;
-background:
-  radial-gradient(
-    circle at 10% 10%,
-    rgba(90, 55, 100, 0.12),
-    transparent 30%
-  ),
-  linear-gradient(
-    135deg,
-    #111014 0%,
-    #08070B 50%,
-    #020203 100%
-  );
+  background: var(--color-bg);
 }
 
 
-/* =========================
-   WATERMARK
-========================= */
-
-.result-watermark {
-  position: absolute;
-
-  top: clamp(15px, 3vw, 25px);
-
-  left: 50%;
-
-  transform: translateX(-50%);
-
-  width: 95%;
-
-  text-align: center;
-
-  white-space: nowrap;
-
-  font-size: clamp(35px, 8vw, 110px);
-
-  font-weight: 900;
-
-  letter-spacing: 2px;
-
-  color: rgba(255, 20, 120, 0.14);
-
-  pointer-events: none;
-
-  user-select: none;
-
-  z-index: 0;
-}
 
 
-/* =========================
+
+/* =========================================
    RESULT CARD
-========================= */
+========================================= */
 
 .result-card {
   position: relative;
-
   z-index: 2;
-
   width: min(520px, 100%);
-
-  padding: 45px 35px;
-
+  padding: 48px 40px;
   text-align: center;
-
-  border-radius: 28px;
-
-  background:#370215;
-
-  border: 1px solid rgba(255, 255, 255, 0.95);
-
-  box-shadow:
-    0 25px 70px rgba(150, 55, 95, 0.15);
-
-  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
 }
 
 
-/* =========================
+/* =========================================
    ICON
-========================= */
+========================================= */
 
 .result-icon {
   font-size: 55px;
-
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 
-/* =========================
+/* =========================================
    LABEL
-========================= */
+========================================= */
 
 .result-label {
-  color: #5b595a;
-
+  color: var(--color-primary);
   font-size: 12px;
-
-  font-weight: 800;
-
+  font-weight: 700;
   letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 
-/* =========================
+/* =========================================
    TITLE
-========================= */
+========================================= */
 
 .result-card h1 {
   margin-top: 10px;
-
-  color: #6e6c6d;
-
-  font-size: clamp(30px, 5vw, 42px);
-
+  color: var(--color-heading);
+  font-size: clamp(28px, 5vw, 38px);
+  font-weight: 700;
   line-height: 1.2;
 }
 
 
-/* =========================
+/* =========================================
    MESSAGE
-========================= */
+========================================= */
 
 .result-message {
   max-width: 400px;
-
   margin: 12px auto 0;
-
-  color: #656263;
-
+  color: var(--color-text-secondary);
   font-size: 15px;
-
   line-height: 1.6;
 }
 
 
-/* =========================
+/* =========================================
    SCORE CIRCLE
-========================= */
+========================================= */
 
 .score-circle {
-  width: 145px;
-  height: 145px;
-
-  margin: 30px auto 12px;
-
+  width: 140px;
+  height: 140px;
+  margin: 30px auto 14px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-direction: column;
-
   border-radius: 50%;
-
-  background: #452732;
-
-  border: 7px solid rgba(236, 63, 134, 0.18);
-
-  box-shadow:
-    0 12px 30px rgba(236, 63, 134, 0.12);
+  background: var(--color-primary-light);
+  border: 6px solid rgba(79, 70, 229, 0.2);
+  box-shadow: 0 8px 24px rgba(79, 70, 229, 0.1);
 }
-
 
 .score-circle strong {
-  color: #e83f86;
-
+  color: var(--color-primary);
   font-size: 42px;
-
   line-height: 1;
+  font-weight: 800;
 }
-
 
 .score-circle span {
-  margin-top: 5px;
-
-  color: #927684;
-
+  margin-top: 4px;
+  color: var(--color-text-secondary);
   font-size: 15px;
+  font-weight: 500;
 }
 
 
-/* =========================
+/* =========================================
    PERCENTAGE
-========================= */
+========================================= */
 
 .percentage {
-  margin-top: 5px;
-
-  color: #e83f86;
-
+  margin-top: 6px;
+  color: var(--color-primary);
   font-size: 18px;
-
   font-weight: 800;
 }
 
 
-/* =========================
+/* =========================================
    PERFORMANCE MESSAGE
-========================= */
+========================================= */
 
 .performance-message {
   margin-top: 12px;
-
-  color: #666566;
-
+  color: var(--color-heading);
   font-size: 18px;
-
+  font-weight: 600;
   line-height: 1.4;
 }
 
 
-/* =========================
+/* =========================================
    RESULT STATS
-========================= */
+========================================= */
 
 .result-stats {
   display: grid;
-
   grid-template-columns: repeat(3, 1fr);
-
   gap: 12px;
-
   margin-top: 28px;
 }
 
-
 .stat {
-  padding: 16px 10px;
-
-  border-radius: 15px;
-
-  background: #5c5a5b;
-
-  border: 1px solid rgba(236, 63, 134, 0.08);
+  padding: 18px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  transition: transform 0.2s ease;
 }
 
+.stat:hover {
+  transform: translateY(-2px);
+}
 
 .stat strong {
   display: block;
-
-  color: #e83f86;
-
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1;
 }
-
 
 .stat span {
   display: block;
-
-  margin-top: 5px;
-
-  color: #e7e1e4;
-
+  margin-top: 6px;
   font-size: 12px;
-
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Correct stat */
+.correct-stat {
+  background: var(--color-success-light);
+  border-color: rgba(22, 163, 74, 0.15);
+}
+
+.correct-stat strong {
+  color: var(--color-success);
+}
+
+.correct-stat span {
+  color: var(--color-success);
+}
+
+/* Wrong stat */
+.wrong-stat {
+  background: var(--color-error-light);
+  border-color: rgba(220, 38, 38, 0.12);
+}
+
+.wrong-stat strong {
+  color: var(--color-error);
+}
+
+.wrong-stat span {
+  color: var(--color-error);
+}
+
+/* Total stat */
+.total-stat strong {
+  color: var(--color-primary);
+}
+
+.total-stat span {
+  color: var(--color-text-secondary);
 }
 
 
-/* =========================
+/* =========================================
    RETRY BUTTON
-========================= */
+========================================= */
 
 .retry-btn {
   width: 100%;
-
   margin-top: 28px;
-
-  padding: 15px 25px;
-
+  padding: 16px 25px;
   border: none;
-
-  border-radius: 13px;
-
-  background: #ec3f86;
-
-  color: rgb(239, 232, 232);
-
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
+  color: white;
   font-size: 16px;
-
   font-weight: 700;
-
+  font-family: var(--font-sans);
   cursor: pointer;
-
-  box-shadow:
-    0 10px 25px rgba(236, 63, 134, 0.25);
-
+  box-shadow: var(--shadow-button);
   transition:
     transform 0.25s ease,
     background 0.25s ease,
     box-shadow 0.25s ease;
 }
 
-
 .retry-btn:hover {
-  background: #d92f75;
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
+}
 
-  transform: translateY(-3px);
-
-  box-shadow:
-    0 15px 30px rgba(236, 63, 134, 0.30);
+.retry-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   HOME BUTTON
+========================================= */
+
+.home-btn {
+  width: 100%;
+  margin-top: 12px;
+  padding: 15px 25px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-button);
+  background: var(--color-bg);
+  color: var(--color-heading);
+  font-size: 15px;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.home-btn:hover {
+  background: var(--color-bg-secondary);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  transform: translateY(-2px);
+}
+
+.home-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
 
 @media (max-width: 600px) {
 
@@ -330,129 +299,70 @@ background:
     padding: 30px 16px;
   }
 
-
-  .result-watermark {
-    top: clamp(15px, 3vw, 25px);
-
-    width: 100%;
-
-    font-size: 48px;
-  }
-
-
   .result-card {
     width: 100%;
-
-    padding: 35px 22px;
-
-    border-radius: 22px;
+    padding: 36px 24px;
+    border-radius: 18px;
   }
-
 
   .result-icon {
     font-size: 45px;
-
     margin-bottom: 12px;
   }
-
 
   .result-label {
     font-size: 11px;
   }
 
-
   .result-card h1 {
-    font-size: 32px;
+    font-size: 28px;
   }
-
 
   .result-message {
     font-size: 14px;
   }
 
-
   .score-circle {
-    width: 125px;
-    height: 125px;
-
+    width: 120px;
+    height: 120px;
     margin-top: 25px;
   }
 
-
   .score-circle strong {
-    font-size: 36px;
+    font-size: 34px;
   }
-
 
   .score-circle span {
-    font-size: 14px;
+    font-size: 13px;
   }
-
 
   .percentage {
     font-size: 17px;
   }
 
-
   .performance-message {
     font-size: 16px;
   }
 
-
   .result-stats {
     gap: 8px;
-
     margin-top: 24px;
   }
 
-
   .stat {
-    padding: 13px 5px;
+    padding: 14px 8px;
   }
-
 
   .stat strong {
-    font-size: 19px;
+    font-size: 20px;
   }
-
 
   .stat span {
     font-size: 11px;
   }
 
-
   .retry-btn {
     margin-top: 24px;
-
     padding: 14px 20px;
   }
-  .home-btn {
-  width: 100%;
-
-  margin-top: 12px;
-
-  padding: 14px 25px;
-
-  border: 1px solid rgba(236, 63, 134, 0.25);
-
-  border-radius: 13px;
-
-  background: rgba(149, 145, 145, 0.8);
-
-  color: #430625;
-
-  font-size: 15px;
-
-  font-weight: 700;
-
-  cursor: pointer;
-
-  transition: all 0.25s ease;
-}
-
-.home-btn:hover {
-  background: #656464;
-
-  transform: translateY(-2px);
-}
 }

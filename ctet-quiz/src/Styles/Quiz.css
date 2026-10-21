@@ -1,314 +1,284 @@
+/* =========================================
+   QUIZ PAGE — LIGHT INDIGO THEME
+========================================= */
 
 .quiz-page {
   min-height: 100vh;
-
   padding: 40px 20px;
-
-  background:
-  radial-gradient(
-    circle at 15% 15%,
-    rgba(90, 55, 100, 0.12),
-    transparent 30%
-  ),
-  linear-gradient(
-    135deg,
-    #111014 0%,
-    #08070B 50%,
-    #020203 100%
-  );
+  background: var(--color-bg);
 }
 
 .quiz-container {
   max-width: 850px;
-
   margin: 0 auto;
 }
 
-/* Header */
+
+/* =========================================
+   QUIZ HEADER
+========================================= */
 
 .quiz-header {
   display: flex;
-
   justify-content: space-between;
-
   align-items: center;
-
   margin-bottom: 20px;
 }
 
 .quiz-label {
-  color: #e83f86;
-
+  color: var(--color-primary);
   font-size: 12px;
-
-  font-weight: 800;
-
-  letter-spacing: 1px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
 }
 
 .quiz-header h1 {
   margin-top: 5px;
-
-  color: #b10f63;
-
+  color: var(--color-heading);
   font-size: 28px;
+  font-weight: 700;
 }
 
 .question-count {
-  padding: 10px 16px;
-
-  border-radius: 20px;
-
-  background: white;
-
-  color: #e83f86;
-
-  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
 }
 
-/* Progress */
+
+/* =========================================
+   PROGRESS BAR
+========================================= */
 
 .progress-container {
   width: 100%;
-
   height: 8px;
-
   margin-bottom: 25px;
-
-  background: #ffd1e2;
-
+  background: var(--color-border);
   border-radius: 20px;
-
   overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
-
-  background: #e83f86;
-
+  background: var(--color-primary);
   border-radius: 20px;
-
   transition: width 0.3s ease;
 }
 
-/* Question Card */
+
+/* =========================================
+   QUESTION CARD
+========================================= */
 
 .question-card {
-  background: rgba(255, 255, 255, 0.06);
-
-padding: 35px;
-
-border-radius: 22px;
-
-border: 1px solid rgba(255, 255, 255, 0.08);
-
-box-shadow:
-  0 15px 40px rgba(0, 0, 0, 0.35);
-
-backdrop-filter: blur(18px);
+  background: var(--color-surface);
+  padding: 35px;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-card);
 }
 
 .question-number {
-  color: #e83f86;
-
-  font-size: 14px;
-
-  font-weight: bold;
-
-  margin-bottom: 15px;
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .question-card h2 {
-  color: #7a7879;
-
-  font-size: 23px;
-
-  line-height: 1.5;
-
-  margin-bottom: 25px;
+  color: var(--color-heading);
+  font-size: 20px;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 24px;
 }
 
-/* Options */
+
+/* =========================================
+   ANSWER OPTIONS
+========================================= */
 
 .options {
   display: flex;
-
   flex-direction: column;
-
   gap: 12px;
 }
 
 .option {
   width: 100%;
-
   display: flex;
-
   align-items: center;
-
-  gap: 15px;
-
-  padding: 16px;
-
+  gap: 14px;
+  padding: 16px 18px;
   border-radius: 12px;
-
-  border: 2px solid #eeeeee;
-
-  background: rgb(86, 85, 85);
-
-  color: #1c1a1b;
-
+  border: 2px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-text);
   font-size: 15px;
-
+  font-family: var(--font-sans);
+  line-height: 1.5;
   text-align: left;
-
   cursor: pointer;
-
-  transition: 0.2s;
+  transition:
+    border-color 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
 }
 
 .option:hover {
-  border-color: #f18ab2;
-
-  background: #6d032a;
+  border-color: var(--color-primary);
+  background: var(--color-primary-light);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(79, 70, 229, 0.08);
 }
 
 .option-letter {
-  width: 34px;
-
-  height: 34px;
-
+  width: 36px;
+  height: 36px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
-  background: #ffe6f0;
-
-  color: #e83f86;
-
-  font-weight: bold;
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 14px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
-/* Correct */
+.option:hover .option-letter {
+  background: var(--color-primary);
+  color: white;
+}
+
+
+/* =========================================
+   CORRECT ANSWER
+========================================= */
 
 .option.correct {
-  border-color: #22a06b;
-
-  background: #e9fff5;
+  border-color: var(--color-success);
+  background: var(--color-success-light);
+  color: var(--color-heading);
 }
 
 .option.correct .option-letter {
-  background: #22a06b;
-
+  background: var(--color-success);
   color: white;
 }
 
-/* Wrong */
+.option.correct:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================
+   WRONG ANSWER
+========================================= */
 
 .option.wrong {
-  border-color: #e5484d;
-
-  background: #fff0f0;
+  border-color: var(--color-error);
+  background: var(--color-error-light);
+  color: var(--color-heading);
 }
 
 .option.wrong .option-letter {
-  background: #e5484d;
-
+  background: var(--color-error);
   color: white;
 }
 
-/* Explanation */
+.option.wrong:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+
+/* =========================================
+   EXPLANATION
+========================================= */
 
 .explanation {
   margin-top: 22px;
-
-  padding: 18px;
-
+  padding: 18px 20px;
   border-radius: 12px;
-
-  background: #fff7fa;
-
-  border-left: 4px solid #e83f86;
+  background: var(--color-primary-light);
+  border-left: 4px solid var(--color-primary);
 }
 
 .explanation strong {
-  color: #e83f86;
+  color: var(--color-primary);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .explanation p {
-  margin-top: 7px;
-
-  color: #6b5360;
-
-  line-height: 1.6;
+  margin-top: 8px;
+  color: var(--color-text);
+  line-height: 1.7;
+  font-size: 14px;
 }
 
-/* Next Button */
+
+/* =========================================
+   NEXT BUTTON
+========================================= */
 
 .next-btn {
   width: 100%;
-
   margin-top: 25px;
-
-  padding: 15px;
-
+  padding: 16px;
   border: none;
-
-  border-radius: 12px;
-
-  background: #63042b;
-
+  border-radius: var(--radius-button);
+  background: var(--color-primary);
   color: white;
-
   font-size: 16px;
-
-  font-weight: bold;
-
+  font-weight: 700;
+  font-family: var(--font-sans);
   cursor: pointer;
+  box-shadow: var(--shadow-button);
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .next-btn:hover {
-  background: #d92f75;
+  background: var(--color-primary-hover);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-button-hover);
 }
 
 .next-btn:disabled {
-  background: #8a0739;
-
+  background: var(--color-border);
+  color: var(--color-text-muted);
   cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
 }
 
-/* Mobile */
+.next-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
 
-@media (max-width: 600px) {
 
-  .quiz-page {
-    padding: 25px 15px;
-  }
-
-  .quiz-header h1 {
-    font-size: 22px;
-  }
-
-  .question-card {
-    padding: 22px;
-  }
-
-  .question-card h2 {
-    font-size: 19px;
-  }
-
-  .option {
-    padding: 13px;
-  }
-  /* =========================
+/* =========================================
    MOCK TEST HEADER
-========================= */
+========================================= */
 
 .mock-header-right {
   display: flex;
@@ -317,40 +287,29 @@ backdrop-filter: blur(18px);
 }
 
 
-/* =========================
+/* =========================================
    MOCK TIMER
-========================= */
+========================================= */
 
 .mock-timer {
-  padding: 9px 14px;
-
-  border-radius: 10px;
-
-  background: #fff0f6;
-
-  color: #e83f86;
-
-  font-size: 14px;
+  padding: 10px 16px;
+  border-radius: var(--radius-button);
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 15px;
   font-weight: 800;
-
+  font-family: var(--font-sans);
   white-space: nowrap;
-
-  border: 1px solid rgba(236, 63, 134, 0.15);
+  border: 1px solid var(--color-border);
+  letter-spacing: 0.5px;
 }
-
-
-/* Last 60 seconds */
 
 .mock-timer.danger {
-  background: #fff1f1;
-
-  color: #d93030;
-
-  border-color: rgba(217, 48, 48, 0.2);
-
+  background: var(--color-error-light);
+  color: var(--color-error);
+  border-color: rgba(220, 38, 38, 0.2);
   animation: timerPulse 1s infinite;
 }
-
 
 @keyframes timerPulse {
   50% {
@@ -359,33 +318,18 @@ backdrop-filter: blur(18px);
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* =========================================
+   SUBMIT CONFIRMATION MODAL
+========================================= */
 
-@media (max-width: 600px) {
-
-  .mock-header-right {
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 7px;
-  }
-
-  .mock-timer {
-    font-size: 12px;
-    padding: 7px 10px;
-  }
-
-}
 .submit-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
-
+  background: rgba(30, 27, 75, 0.45);
+  backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
   justify-content: center;
-
   z-index: 1000;
   padding: 20px;
 }
@@ -393,16 +337,12 @@ backdrop-filter: blur(18px);
 .submit-modal {
   width: 100%;
   max-width: 440px;
-
-  background: white;
+  background: var(--color-surface);
   border-radius: 20px;
-
-  padding: 32px;
-
+  padding: 36px 32px;
   text-align: center;
-
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
-
+  box-shadow: 0 20px 60px rgba(30, 27, 75, 0.2);
+  border: 1px solid var(--color-border);
   animation: submitModalIn 0.2s ease;
 }
 
@@ -413,13 +353,15 @@ backdrop-filter: blur(18px);
 
 .submit-modal h2 {
   margin: 0 0 10px;
-  font-size: 26px;
+  font-size: 24px;
+  color: var(--color-heading);
 }
 
 .submit-modal p {
   margin: 0 auto 24px;
-  color: #666;
+  color: var(--color-text-secondary);
   line-height: 1.6;
+  font-size: 15px;
 }
 
 .submit-actions {
@@ -431,28 +373,39 @@ backdrop-filter: blur(18px);
 .cancel-submit-btn,
 .confirm-submit-btn {
   border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-
+  padding: 13px 24px;
+  border-radius: var(--radius-button);
   font-size: 14px;
   font-weight: 600;
-
+  font-family: var(--font-sans);
   cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .cancel-submit-btn {
-  background: #eeeeee;
-  color: #333;
+  background: var(--color-bg-secondary);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+}
+
+.cancel-submit-btn:hover {
+  background: var(--color-border);
+  transform: translateY(-1px);
 }
 
 .confirm-submit-btn {
-  background: #222;
+  background: var(--color-primary);
   color: white;
+  box-shadow: var(--shadow-button);
 }
 
-.cancel-submit-btn:hover,
 .confirm-submit-btn:hover {
+  background: var(--color-primary-hover);
   transform: translateY(-1px);
+  box-shadow: var(--shadow-button-hover);
 }
 
 @keyframes submitModalIn {
@@ -460,14 +413,57 @@ backdrop-filter: blur(18px);
     opacity: 0;
     transform: scale(0.95);
   }
-
   to {
     opacity: 1;
     transform: scale(1);
   }
 }
 
-@media (max-width: 500px) {
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .quiz-page {
+    padding: 20px 16px;
+  }
+
+  .quiz-header h1 {
+    font-size: 22px;
+  }
+
+  .question-card {
+    padding: 24px 20px;
+  }
+
+  .question-card h2 {
+    font-size: 18px;
+  }
+
+  .option {
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .option-letter {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .mock-header-right {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+  }
+
+  .mock-timer {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
   .submit-actions {
     flex-direction: column;
   }
@@ -476,5 +472,4 @@ backdrop-filter: blur(18px);
   .confirm-submit-btn {
     width: 100%;
   }
-}
 }

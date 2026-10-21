@@ -47,10 +47,6 @@ function Home() {
       <div className="bg-orb orb-one"></div>
       <div className="bg-orb orb-two"></div>
 
-      <div className="name-watermark">
-        FOR DEAR MAMI
-      </div>
-
 
       {/* =========================================
           FALLING PINK FLOWERS
@@ -58,37 +54,37 @@ function Home() {
 
       <div className="falling-flowers" aria-hidden="true">
 
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-        <span>💖</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🌸</span>
-        <span>🤍</span>
-        <span>🤍</span>
-        <span>🤍</span>
-        <span>🤍</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
 
-        <span>💛</span>
-        <span>💛</span>
-        <span>💛</span>
-        <span>💛</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
       
         <span>✨</span>
         <span>✨</span>
         <span>✨</span>
         <span>✨</span>
-        <span>❤️</span>
-        <span>❤️</span>
-        <span>❤️</span>
-        <span>❤️</span>
-        <span>💗</span>
-        <span>💗</span>
-        <span>💗</span>
-        <span>💗</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
+        <span>✨</span>
 
       </div>
 

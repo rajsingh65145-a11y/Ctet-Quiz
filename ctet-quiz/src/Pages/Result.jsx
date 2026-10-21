@@ -22,9 +22,6 @@ const navigate = useNavigate();
   return (
     <main className="result-page">
 
-      <div className="result-watermark">
-        FOR PRIYA SINGH
-      </div>
 
       <div className="result-card">
 

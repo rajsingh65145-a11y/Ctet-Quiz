@@ -1,3 +1,7 @@
+/* =========================================
+   APP-LEVEL BASE STYLES
+========================================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +9,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-sans);
 }
 
 .app {
@@ -20,7 +24,8 @@ body {
 .app button {
   padding: 12px 25px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-button);
   cursor: pointer;
   font-size: 16px;
+  font-family: var(--font-sans);
 }
